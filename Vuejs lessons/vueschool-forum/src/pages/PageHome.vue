@@ -1,5 +1,5 @@
 <template>
-  <div class="col-full">
+  <div class="col-full push-top">
     <h1>Welcome to the Forum</h1>
     <CategoryList :categories="categories"/>
   </div>
@@ -7,10 +7,7 @@
 
 <script>
 
-import sourceData from '@/data'
 import CategoryList from '@/components/CategoryList'
-
-console.log(sourceData)
 
 export default {
   components: {
@@ -18,7 +15,7 @@ export default {
   },
   data () {
     return {
-      categories: Object.values(sourceData.categories)
+      categories: Object.values(this.$store.state.categories)
     }
   }
 }

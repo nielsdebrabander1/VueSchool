@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import sourceData from '@/data'
+import {countObjectProperties} from '@/utils'
 
 export default {
   props: {
@@ -42,10 +42,10 @@ export default {
   },
   computed: {
     repliesCount () {
-      return Object.keys(this.thread.posts).length - 1
+      return countObjectProperties(this.thread.posts) - 1
     },
     user () {
-      return sourceData.users[this.thread.userId]
+      return this.$store.state.users[this.thread.userId]
     }
   }
 }

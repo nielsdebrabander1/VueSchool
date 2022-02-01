@@ -3,17 +3,17 @@
     <div>
       <p>
         <router-link :to="{name: 'ThreadShow', params: {id: thread['.key']}}">
-          {{thread.title}}
+          {{ thread.title }}
         </router-link>
       </p>
       <p class="text-faded text-xsmall">
-        By <a href="#">{{user.name}}</a>, {{thread.publishedAt}}.
+        By <a href="#">{{ user.name }}</a>, {{ thread.publishedAt }}.
       </p>
     </div>
 
     <div class="activity">
       <p class="replies-count">
-        {{repliesCount}} replies
+        {{ repliesCount }} replies
       </p>
 
       <!--<img class="avatar-medium" src="http://i0.kym-cdn.com/photos/images/facebook/000/010/934/46623-batman_pikachu_super.png" alt="">-->
@@ -30,6 +30,7 @@
 
 <script>
 import sourceData from '@/data'
+
 export default {
   props: {
     thread: {

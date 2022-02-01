@@ -12,19 +12,19 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style module>
 .headingLarge {
   font-size: 100px;
 }
+
 .textLarge {
   font-size: 50px;
   font-weight: 100;
 }
+
 .centered {
   text-align: center;
 }

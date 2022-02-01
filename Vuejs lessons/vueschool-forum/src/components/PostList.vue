@@ -10,6 +10,7 @@
 
 <script>
 import PostListItem from './PostListItem'
+
 export default {
   components: {
     PostListItem

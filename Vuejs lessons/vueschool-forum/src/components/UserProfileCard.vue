@@ -7,26 +7,27 @@
         <img :src="user.avatar" alt="" class="avatar-xlarge">
       </p>
 
-      <h1 class="title">{{user.username}}</h1>
+      <h1 class="title">{{ user.username }}</h1>
 
-      <p class="text-lead">{{user.name}}</p>
+      <p class="text-lead">{{ user.name }}</p>
 
       <p class="text-justify">
-        <span v-if="user.bio">{{user.bio}}</span>
+        <span v-if="user.bio">{{ user.bio }}</span>
         <span v-else>No bio specified.</span>
       </p>
 
-      <span class="online">{{user.username}} is online</span>
+      <span class="online">{{ user.username }} is online</span>
 
 
       <div class="stats">
-        <span>{{userPostsCount}} posts</span>
-        <span>{{userThreadsCount}} threads</span>
+        <span>{{ userPostsCount }} posts</span>
+        <span>{{ userThreadsCount }} threads</span>
       </div>
 
       <hr>
 
-      <p v-if="user.website" class="text-large text-center"><i class="fa fa-globe"></i> <a :href="user.website">{{user.website}}</a></p>
+      <p v-if="user.website" class="text-large text-center"><i class="fa fa-globe"></i> <a
+        :href="user.website">{{ user.website }}</a></p>
 
     </div>
 
@@ -51,14 +52,14 @@ export default {
     user: {
       required: true,
       type: Object
+    }
+  },
+  computed: {
+    userThreadsCount () {
+      return this.$store.getters.userThreadsCount(this.user['.key'])
     },
-    userPostsCount: {
-      required: true,
-      type: Number
-    },
-    userThreadsCount: {
-      required: true,
-      type: Number
+    userPostsCount () {
+      return this.$store.getters.userPostsCount(this.user['.key'])
     }
   }
 }
